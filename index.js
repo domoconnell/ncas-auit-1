@@ -28,7 +28,12 @@ var	emo1 = new Gpio(4, 'HIGH'),
 	emoonstat = new Gpio(25, 'in'),
 	emoofstat = new Gpio(9, 'in');	
 
-	
+	emo1.write(0);
+	emo2.write(0);
+	emo3.write(0);
+	emo4.write(0);
+	emo5.write(0);
+	emo6.write(0);
 	
 	
 	
@@ -66,15 +71,12 @@ var	emo1 = new Gpio(4, 'HIGH'),
 		
 			}, 100);
 		})
-		
-		
-		
-		
-		
-				
-		
+						
 	}
 	
+	setTimeout(function(){
+		doEmo()
+	}, 2000);
 
 	
 	

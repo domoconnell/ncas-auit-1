@@ -3,7 +3,7 @@ var async = require('async');
 
 
 function domes(Gpio) {
-	domes.control = new Gpio(8, 'out')
+	domes.control = new Gpio(8, 'high')
 	domes.status = new Gpio(11, 'in')
 }
 

@@ -12,6 +12,6 @@ var domes = new domesType(Gpio)
 
 
 setTimeout(function(){
-	domes.switch(1);
-	emo.typeCode(1654)
+	domes.switch(0);
+//	emo.typeCode(1654);
 }, 1000);

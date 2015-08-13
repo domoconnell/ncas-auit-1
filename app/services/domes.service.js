@@ -2,10 +2,30 @@ var q = require('q');
 var async = require('async');
 
 
-function domes(Gpio) {
+function domes(Gpio, socket) {
 	domes.control = new Gpio(8, 'high')
-	domes.status = new Gpio(11, 'in')
+	domes.status = new Gpio(11, 'in', 'both')
+	domes.lastUpdate = null
+	domes.status.watch(function (err, value) {
+		var test = new Date().getTime();
+		domes.lastUpdate = test
+		setTimeout(function(){
+			if(test==domes.lastUpdate){
+				//domes changes
+				socket.emit('UpdateState', {
+					node: 'domes',
+					value: value
+				})
+			}
+		}, 500);
+	})
 }
+
+
+
+
+
+
 
 domes.prototype.relaySwitch = function(val) {
 

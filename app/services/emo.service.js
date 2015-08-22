@@ -64,8 +64,6 @@ emo.prototype.powerOff = function(){
 		emo.prototype.typeCode(1654);
 	}
 }
-
-
 emo.prototype.reverse = function(){
 	emo.prototype.typeCode(1654);
 }

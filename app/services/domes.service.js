@@ -13,16 +13,13 @@ function domes(Gpio, socket) {
 		domes.lastUpdate = test
 		setTimeout(function(){
 			if(test==domes.lastUpdate){
-				//domes changes
 				domes.socket.emit('UpdateState', {
 					node: 'domes',
 					value: value
 				})
 			}
 		}, 500);
-	})
-	
-	
+	})	
 	
 }
 
